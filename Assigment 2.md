@@ -4,7 +4,8 @@ Object-oriented programming (OOP) is programming based on the concept of objects
 
 OOP Principles
 
-1. Encapsulation The basic concept of encapsulation is hiding implementation details of an object from its clients. Encapsulation allows us to define controlled access to data stored inside objects of our class. Example:
+1. Encapsulation
+The basic concept of encapsulation is hiding implementation details of an object from its clients. Encapsulation allows us to define controlled access to data stored inside objects of our class. Example:
     
     ```markdown
     public class Student {
@@ -62,7 +63,7 @@ OOP Principles
     }
     ```
     
-2. Inheritance
+3. Inheritance
 Inheritance allows one class to inherit properties from another class. The class that inherits from another class is called a child/subclass. Meanwhile, the class that is inherited from is called a parent/superclass.
 Example:
     
@@ -80,7 +81,7 @@ Example:
     } 
     ```
     
-3. Polymorphism
+4. Polymorphism
 Polymorphism allows different classes to have the same name of the method but distinct implementations.
 Overriding is a type of polymorphism where a child class has a different implementation of the method that is already defined in the parent class. A child class can customize the behavior of the inherited method.
 Example:
@@ -139,34 +140,38 @@ Example:
     }
     ```
     
-4. Abstraction
+5. Abstraction
 Abstraction in OOP is used to hide unnecessary information and display only necessary information to the users interacting. It is essential to represent real-world objects in a simplified manner for users to interact easily.
     
     Example:
-   interface Vehicle {
-    void start();
-}
-
-class Car implements Vehicle {
-    @Override
-    public void start() {
-        System.out.println("Car is big.");
+    
+    ```markdown
+    interface Vehicle {
+        void start();
     }
-}
-
-class Motorcycle implements Vehicle {
-    @Override
-    public void start() {
-        System.out.println("Motorcycle is small.");
+    
+    class Car implements Vehicle {
+        @Override
+        public void start() {
+            System.out.println("Car is big.");
+        }
     }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Vehicle car = new Car();
-        Vehicle motorcycle = new Motorcycle();
-
-        car.start();          
-        motorcycle.start(); 
+    
+    class Motorcycle implements Vehicle {
+        @Override
+        public void start() {
+            System.out.println("Motorcycle is small.");
+        }
     }
-}
+    
+    public class Main {
+        public static void main(String[] args) {
+            Vehicle car = new Car();
+            Vehicle motorcycle = new Motorcycle();
+    
+            car.start();          
+            motorcycle.start(); 
+        }
+    }
+    
+    ```
