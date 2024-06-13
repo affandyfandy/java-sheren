@@ -1,37 +1,35 @@
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
-public class Assignment3 {
-    public static List<Integer> getSecondBiggestIndex(int[] array) {
-        List<Integer> indices = new ArrayList<>();
-        if (array.length < 2) {
-            return indices; 
-        }
+public class test {
+    public static ArrayList<Integer> getSecondBiggestIndices(ArrayList<Integer> array) {
+        ArrayList<Integer> indices = new ArrayList<>();
 
         int biggest = Integer.MIN_VALUE;
         int secondBiggest = Integer.MIN_VALUE;
+        int current = 0;
 
-        for (int num : array) {
-            if (num > biggest) {
+        for (int i = 0; i < array.size(); i++) {
+            int input = array.get(i);
+            if (input > biggest) {
                 secondBiggest = biggest;
-                biggest = num;
-            } else if (num > secondBiggest && num != biggest) {
-                secondBiggest = num;
+                biggest = input;
+                current = array.indexOf(secondBiggest);
+                indices.clear();
             }
-        }
-
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == secondBiggest) {
+                    
+            if (input == secondBiggest) {
                 indices.add(i);
             }
         }
 
+        indices.add(0, current);
         return indices;
     }
 
     public static void main(String[] args) {
-        int[] input = {1, 4, 3, -6, 5, 4};
-        List<Integer> result = getSecondBiggestIndex(input);
-        System.out.println(result);
+        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 4, 3, -6, 5, 4));
+        ArrayList<Integer> output = getSecondBiggestIndices(array);
+        System.out.println(output);  // output: [1, 5]
     }
 }

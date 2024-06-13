@@ -58,13 +58,13 @@ Explanation:
     - The ‘MyClass’ object in heap now has ‘value’ set to 10 and ‘name’ set to “Emelyn”
     
 
-**Summary**
+#### Summary
 
-Reference passing
+**Reference passing**
 
 In Java, when we pass an object to a method, we are passing the reference to that object (a pointer to the object in heap memory). Changes made to the object via this reference will affect the actual object in heap memory.
 
-Heap and stack interaction
+**Heap and stack interaction**
 
 - Stack memory holds references to objects
 - Heap memory holds the actual objects
@@ -72,12 +72,15 @@ Heap and stack interaction
     
     
 
+
 **The Visual Diagram**
 
 ![Visual Diagram 1](img/visualdiagram1.jpg)
 
 - Changes made to the ‘MyClass’ object through ‘x’ modify the contents of the object because ‘x’ and ‘obj’ reference the same object in heap memory.
 - obj.value after modifyObject will be 10 and obj,value after modifyObject will be “Emelyn”.
+
+
 
 ### Cannot change the reference itself to point to a different object
 
@@ -116,6 +119,7 @@ Explanation:
 - Note that ‘obj’ in the ‘main’ method still points to the original ‘MyClass’ object
 - The original ‘MyClass’ object pointed to by ‘obj’ remains unchanged because ‘changeReference’ only modified the local reference ‘x’
 - Therefore, ‘obj.value’ remains 5 and ‘obj.name’ remains “Sheren”.
+
 
 **The Visual Diagram**
 
