@@ -133,8 +133,8 @@ The Singleton pattern is designed to guarantee a single instance of a class and 
                 singleton2.showMessage();
             });
     
-            thread1.start();
-            thread2.start();
+            thread1.start(); // output: Hi, this is a thread-safe, lazy-initialized Singleton using double-checked locking!
+            thread2.start(); // output: Hi, this is a thread-safe, lazy-initialized Singleton using double-checked locking!
         }
     }
     ```
@@ -170,7 +170,7 @@ The Singleton pattern is designed to guarantee a single instance of a class and 
             // Get the singleton instance
             BillPughSingleton singleton = BillPughSingleton.getInstance();
             
-            singleton.showMessage();
+            singleton.showMessage(); // output: Hi, this is a thread-safe, lazy-initialized Singleton using the Bill Pugh method!
         }
     }
     ```
