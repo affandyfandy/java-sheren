@@ -74,7 +74,7 @@ Heap and stack interaction
 
 **The Visual Diagram**
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/07993411-3a8c-4788-a796-5769eb01befb/63a0f7a5-5d0d-4105-bb29-57df5d06db55/Untitled.jpeg)
+![Visual Diagram 1](img/visualdiagram1.jpg)
 
 - Changes made to the ‘MyClass’ object through ‘x’ modify the contents of the object because ‘x’ and ‘obj’ reference the same object in heap memory.
 - obj.value after modifyObject will be 10 and obj,value after modifyObject will be “Emelyn”.
@@ -119,7 +119,7 @@ Explanation:
 
 **The Visual Diagram**
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/07993411-3a8c-4788-a796-5769eb01befb/e5610659-a6a3-4fe7-8a5c-8feefcac9498/Untitled.jpeg)
+![Visual Diagram 2](img/visualdiagram2.jpg)
 
 - The reference ‘x’ in the ‘changeReference’ method is local to that method and does not affect the ‘obj’ reference to the ‘main’ method
 - The ‘changeReference’ method creates a new ‘MyClass’ object and assigns it to ‘x’, but this does not change the object that ‘obj’ in ‘main’ refers to
