@@ -423,7 +423,7 @@ public class ConcurrentModificationExample {
  */
 ```
 
-1. **Concurrent Collections**
+2. **Concurrent Collections**
     
     Use concurrent collections from the `java.util.concurrent` package, such as `CopyOnWriteArrayList`, `ConcurrentHashMap`, etc. These collections handle concurrency internally and avoid `ConcurrentModificationException:`
     
