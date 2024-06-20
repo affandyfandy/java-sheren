@@ -1,3 +1,7 @@
+/* Create a method that takes a string as input and throws an exception if the string does not contain vowels
+Try to use user defined exception
+ */
+
 // Custom exception
 class NoVowelsException extends Exception {
     public NoVowelsException(String message) {

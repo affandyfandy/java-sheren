@@ -1,3 +1,9 @@
+/* Create array menu with 5  element String
+User enter the number and print menu follow user enter
+Create Lab2Exception and main function will throws this
+Handle unchecked exception if user try to read data element>5 and It do not crash application
+ */
+
 import java.util.Scanner;
 
 class Lab2Exception extends RuntimeException {

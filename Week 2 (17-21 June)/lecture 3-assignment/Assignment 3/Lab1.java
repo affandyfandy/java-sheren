@@ -1,3 +1,8 @@
+/* Lab 1 (try to use try-with-resources)
+Create test1.txt with text as “Hello, some text here”
+Write application with feature read file test.txt 
+Handle all exception and print text on file to console and write text to file test2.txt
+ */
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
