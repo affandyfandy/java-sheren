@@ -13,18 +13,18 @@ public class BankAccount {
     }
 
     public void deposit(double amount) {
-        lock.lock();
+        lock.lock(); // Locks the critical section to ensure thread safety
         try {
             balance += amount;
             System.out.println("Deposit: " + amount);
             System.out.println("Balance after deposit: " + balance);
         } finally {
-            lock.unlock();
+            lock.unlock(); // To ensure the lock is released 
         }
     }
 
     public void withdraw(double amount) {
-        lock.lock();
+        lock.lock(); // Locks the critical section to ensure thread safety
         try {
             if (balance >= amount) {
                 balance -= amount;
@@ -35,7 +35,7 @@ public class BankAccount {
                 System.err.println("Failed. Insufficient funds");
             }
         } finally {
-            lock.unlock();
+            lock.unlock(); // Unlocks the critical section
         }
     }
 

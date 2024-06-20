@@ -1,3 +1,4 @@
+// Write a Java program that sorts an array of integers using multiple threads.
 
 import java.util.Arrays;
 
@@ -29,7 +30,10 @@ class MultiThreadArraySort {
     
 
     private static void merge(int[] result, int[] left, int[] right) {
+        // i index pointer of left array, j for right array, and k for result
         int i = 0, j = 0, k = 0;
+
+        // Compare elements from left and right arrays and place the smaller element into the result array
         while (i < left.length && j < right.length) {
             if (left[i] <= right[j]) {
                 result[k++] = left[i++];
@@ -38,10 +42,12 @@ class MultiThreadArraySort {
             }
         }
 
+        // Copy any remaining elements from the left array to the result array
         while (i < left.length) {
             result[k++] = left[i++];
         }
 
+        // Copy any remaining elements from the right array to the result array
         while (j < right.length) {
             result[k++] = right[j++];
         }
