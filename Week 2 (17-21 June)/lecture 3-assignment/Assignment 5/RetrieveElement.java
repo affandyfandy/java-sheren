@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task2 {
+public class RetrieveElement {
     public static void main(String[] args) {
         List<String> color = new ArrayList<>();
         color.add("Black");

@@ -22,7 +22,6 @@ class MultiThreadArraySort {
             leftSort.join();
             rightSort.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
         }
         
         merge(array, left, right);
