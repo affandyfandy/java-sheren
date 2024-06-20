@@ -56,3 +56,5 @@ public class Sum {
 - The code makes use of Java's Stream API to process the list of integers
 - `integers.parallelStream()`: Converts the list to a parallel stream
 - `.collect(Collectors.summingInt(Integer::intValue))`: Uses the `Collectors.summingInt` method to sum the integers in the parallel stream.
+
+[Codes](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%206/Sum.java)

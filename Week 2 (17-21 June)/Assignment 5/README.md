@@ -55,7 +55,7 @@ HashSet, LinkedHashSet and TreeSet are all implementations of Set interface.
 Write a Java program to retrieve an element (at a specified index) from a given array list.
 
 **The codes:**
-`[Question 2 - Retrieve Element]([https://link-url-here.org](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/RetrieveElement.java))`
+[Question 2 - Retrieve Element](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/RetrieveElement.java)
 
 ---
 
@@ -68,7 +68,7 @@ Remove lines which is duplicated data by 1 key field
 • Output: write to new file with no duplication by key field
 
 **The codes:**
-`[Question 3 - Remove Duplicates]([https://link-url-here.org](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/RemoveDuplicates.java))`
+[Question 3 - Remove Duplicates](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/RemoveDuplicates.java)
 
 ---
 
@@ -79,7 +79,7 @@ Remove lines which is duplicated data by 1 key field
 Convert List to Map (ex: employee with employeeID as a key and order asc by key).
 
 **The codes:**
-`[Question 5 - Convert List to Map]([https://link-url-here.org](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/ListToMap.java))`
+[Question 5 - Convert List to Map](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/ListToMap.java)
 
 ---
 
@@ -141,6 +141,9 @@ public class EqualsExample {
 }
 ```
 
+[Codes](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/Update/EqualsExample.java)
+
+
 ### 👩‍🏫 hashCode() Method
 
 `hashCode()` method returns an integer hash code value for the object. It is used in hashing-based collections like `HashMap`, `HashSet`, and `Hashtable`. When overriding the `equals()` method, it's important to also override the `hashCode()` method to maintain the contract between them: if two objects are equal according to `equals()`, they must have the same hash code.
@@ -183,6 +186,8 @@ public class HashCodeExample {
 }
 ```
 
+[Codes](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/Update/HashCodeExample.java)
+
 ### ❔ Why We Override equals() and hashCode()
 
 - **Consistency in Collections:** When using objects in hashing-based collections, consistent behavior of `equals()` and `hashCode()` is important
@@ -205,7 +210,7 @@ public class HashCodeExample {
 See assignment 5.5, add employee to HashSet. How can it recognize that 2 employee has duplicated employee ID? Implement it.
 
 **The codes:**
-`[Question 9 - Add Employee to HashSet]([https://link-url-here.org](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/ListToMap.java))`
+[Question 9 - Add Employee to HashSet and Recognize Duplicate employeeID](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/Update/DuplicateEmployee.java)
 
 **Explanation:**
 
@@ -220,7 +225,7 @@ To recognize 2 employee has duplicated employee ID, we need to use `HashSet` for
 Similar (9), create Map of employee with composite key (department, employeeID).
 
 **The codes:**
-`[Question 10 - Map Employee with Composite Key]([https://link-url-here.org](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/ListToMap.java))`
+[Question 10 - Map Employee with Composite Key](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/Update/CompositeKeyMap.java)
 
 **Explanation:**
 
@@ -301,7 +306,7 @@ public class demo1 {
  */
 ```
 
-`[Question 11 - Issues with Provided Codes]([https://link-url-here.org](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/ListToMap.java))`
+[Question 11 - Issues with Provided Codes](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%205/Update/demo1.java)
 
 ---
 
