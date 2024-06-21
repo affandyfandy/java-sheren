@@ -197,8 +197,11 @@ public class HashCodeExample {
 ### Summary
 
 ✅ **`equals()` method:** Determines whether two objects are equal based on their attributes
+
 ✅ **`hashCode()` method:** Generates a hash code for an object, used in hashing-based collections
+
 ✅ **Contract:** If `equals()` is overridden, `hashCode()` must also be overridden to maintain consistency
+
 ✅ By overriding `equals()` and `hashCode()`, we can ensure that our objects behave correctly when compared and used in collections.
 
 ---

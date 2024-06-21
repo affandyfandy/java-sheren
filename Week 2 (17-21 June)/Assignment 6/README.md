@@ -57,4 +57,148 @@ public class Sum {
 - `integers.parallelStream()`: Converts the list to a parallel stream
 - `.collect(Collectors.summingInt(Integer::intValue))`: Uses the `Collectors.summingInt` method to sum the integers in the parallel stream.
 
-[Codes](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%206/Sum.java)
+---
+
+## 💡 Q2: Remove All Duplicate Elements Using Stream
+
+**The question:**
+
+Remove all duplicate elements from a list of string using streams.
+
+**The codes:**
+
+[Question 2 - Remove All Duplicate Elements Using Stream]()
+
+```java
+// Remove all duplicate elements from a list of string using streams
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class RemoveDuplicatesString {
+    public static void main(String[] args) {
+        List<String> color = Arrays.asList("Blue", "Red", "Pink", "Blue", "Yellow", "Red");
+
+        // Get list without duplicates using stream
+        List<String> distinctColor = color.stream()
+                                            .distinct()
+                                            .collect(Collectors.toList());
+
+        System.out.println(distinctColor); // Output: [Blue, Red, Pink, Yellow]
+    }
+}
+```
+
+**Explanation:**
+
+To remove duplicates elements from a list of string, we can use `stream.distinct()` method. The `distinct()` method returns a stream consisting of the distinct elements of the given stream.
+
+---
+
+## 💡 Q3: Remove Lines Which is Duplicated Data By Key Field
+
+**The question:**
+
+Remove lines which is duplicated data by key field
+a) Input: file data (.csv or .txt) and position key field for txt or key field name for csv
+b) Output: write to new file with no duplication by key field
+Clue: Using Stream with IO.
+
+**The codes:**
+
+[Question 3 - Remove Lines Which is Duplicated Data By Key Field]()
+
+**Key points:**
+
+- **Streams and Collectors**:
+    - The code uses Java Streams to process the file lines in a functional style
+    - `Collectors.toMap` is used to ensure that only unique lines are retained based on the key field.
+- **Error Handling**:
+    - The code checks for invalid key field indexes and throws an exception if the index is out of bounds.
+- **Resource Management**:
+    - Try-with-resources ensures that the `Stream` and `BufferedWriter` are closed automatically, preventing resource leaks.
+
+---
+
+## 💡 Q4: Count Number of Strings Start with a Specific Letter Using Streams
+
+**The question:**
+
+Count the number of strings in a list that start with a specific letter using streams.
+a) Input: ["Red", "Green", "Blue", "Pink", "Brown“] and String = “G”
+b) Output: 1.
+
+**The codes:**
+
+[Question 4 - Count Number of Strings Start with a Specific Letter Using Streams]()
+
+```java
+/* Count the number of strings in a list that start with a specific letter using streams.
+a) Input: ["Red", "Green", "Blue", "Pink", "Brown“] and String = “G”
+b) Output: 1
+*/
+
+import java.util.*;
+
+public class CountString {
+    public static void main(String[] args) {
+        List<String> colors = Arrays.asList("Red", "Green", "Blue", "Pink", "Brown");
+        String letter = "G";
+
+        long count = colors.stream()
+                        .filter(color -> color.startsWith(letter))
+                        .count();
+
+        System.out.println(count); // Output: 1
+    }
+}
+
+```
+
+**Explanation:**
+
+We can count the number of strings in a list that start with a specific letter by:
+
+- Convert the list to a stream
+- Filter the stream to include only the strings that start with the specific letter
+- Count the number of elements in the filtered stream.
+
+---
+
+## 💡 Q5: Input List of Employees
+
+**The question:**
+
+Input: list of employees (ex: Employee (ID, name, age, salary,..))
+a) Sort name in alphabetical, ascending using streams
+b) Find employee has max salary using streams
+c) Check any employee names match with specific keywords or not.
+
+**The codes:**
+
+[Question 5 - Input List of Employees]()
+
+**Explanation:**
+
+- Use `Stream.sorted()` to sort the employee’s name
+- Use `Stream.max` with a comparator based on the `salary` field. The comparator can be created using `Comparator.comparing(Employee::getSalary)`
+- Use `Stream.anyMatch` to check if any employee's name matches the specific keyword.
+
+---
+
+## 💡 Q6: Convert List Employees to Map with ID as key
+
+**The question:**
+
+Convert list employees to map with ID as key.
+
+**The codes:**
+
+[Question 6 - Convert List Employees to Map with ID as key]()
+
+**Explanation:**
+
+- `employees.stream()`: Converts the list of employees into a stream.
+- `.collect(Collectors.toMap(Employee::getEmployeeID, emp -> emp))`: Collects elements of the stream into a `Map<Integer, Employee>`.
+    - `Employee::getEmployeeID` is used as the key extractor.
+    - `emp -> emp` specifies that each employee object itself is the value in the map.

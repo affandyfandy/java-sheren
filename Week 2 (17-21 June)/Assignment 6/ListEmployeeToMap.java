@@ -1,4 +1,4 @@
-//Convert List to Map (ex: employee with employeeID as a key and order asc by key)
+// Convert list employees to map with ID as key
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -50,21 +50,16 @@ class Employee {
     }
 }
 
-public class ListToMap {
+public class ListEmployeeToMap {
     public static void main(String[] args) {
         List<Employee> employees = new ArrayList<>();
         employees.add(new Employee(3, "Lisa", "Finance"));
         employees.add(new Employee(1, "Luna", "IT"));
         employees.add(new Employee(2, "Ray", "HR"));
 
-        // Convert List to Map and sort by employeeID
+        // Convert List to Map
         Map<Integer, Employee> employeeMap = employees.stream()
-                .collect(Collectors.toMap(
-                        Employee::getEmployeeID, // Key
-                        e1 -> e1, // Value
-                        (e1, e2) -> e1, // Merge function that specifies what to do in case of duplicate keys 
-                        TreeMap::new // Specifies that the resulting map is TreeMap, which maintains natural ordering of keys
-                ));
+                .collect(Collectors.toMap(Employee::getEmployeeID, emp -> emp));
 
         // Print the sorted map
         employeeMap.forEach((id, employee) -> 
@@ -72,6 +67,11 @@ public class ListToMap {
     }
 }
 
+/* Output:
+ * EmployeeID: 1, Employee: Employee{employeeID=1, name='Luna', department='IT'}
+ * EmployeeID: 2, Employee: Employee{employeeID=2, name='Ray', department='HR'}
+ * EmployeeID: 3, Employee: Employee{employeeID=3, name='Lisa', department='Finance'}
+ */
 
 
 

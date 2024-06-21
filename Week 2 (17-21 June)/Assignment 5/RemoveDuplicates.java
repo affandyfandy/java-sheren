@@ -17,7 +17,7 @@ public class RemoveDuplicates {
                 int keyFieldIndex = Integer.parseInt(keyField); // Convert key field index to an integer
                 removeDuplicatesFromTXT(inputFile, outputFile, keyFieldIndex);
             } else {
-                System.out.println("Invalid file type. Supported types are 'csv' and 'txt'.");
+                System.out.println("Invalid file type. Supported type is 'txt'.");
             }
         } catch (IOException | NumberFormatException e) {
             e.printStackTrace();
