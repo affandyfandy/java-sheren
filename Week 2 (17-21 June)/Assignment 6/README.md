@@ -57,6 +57,8 @@ public class Sum {
 - `integers.parallelStream()`: Converts the list to a parallel stream
 - `.collect(Collectors.summingInt(Integer::intValue))`: Uses the `Collectors.summingInt` method to sum the integers in the parallel stream.
 
+[Codes](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%206/Sum.java)
+
 ---
 
 ## 💡 Q2: Remove All Duplicate Elements Using Stream
@@ -67,7 +69,7 @@ Remove all duplicate elements from a list of string using streams.
 
 **The codes:**
 
-[Question 2 - Remove All Duplicate Elements Using Stream]()
+[Question 2 - Remove All Duplicate Elements Using Stream](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%206/RemoveDuplicatesString.java)
 
 ```java
 // Remove all duplicate elements from a list of string using streams
@@ -106,7 +108,7 @@ Clue: Using Stream with IO.
 
 **The codes:**
 
-[Question 3 - Remove Lines Which is Duplicated Data By Key Field]()
+[Question 3 - Remove Lines Which is Duplicated Data By Key Field](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%206/RemoveDuplicatesTxt.java)
 
 **Key points:**
 
@@ -130,7 +132,7 @@ b) Output: 1.
 
 **The codes:**
 
-[Question 4 - Count Number of Strings Start with a Specific Letter Using Streams]()
+[Question 4 - Count Number of Strings Start with a Specific Letter Using Streams](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%206/CountString.java)
 
 ```java
 /* Count the number of strings in a list that start with a specific letter using streams.
@@ -176,7 +178,7 @@ c) Check any employee names match with specific keywords or not.
 
 **The codes:**
 
-[Question 5 - Input List of Employees]()
+[Question 5 - Input List of Employees](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%206/ListEmployee.java)
 
 **Explanation:**
 
@@ -194,7 +196,7 @@ Convert list employees to map with ID as key.
 
 **The codes:**
 
-[Question 6 - Convert List Employees to Map with ID as key]()
+[Question 6 - Convert List Employees to Map with ID as key](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%206/ListEmployeeToMap.java)
 
 **Explanation:**
 

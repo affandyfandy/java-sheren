@@ -36,9 +36,9 @@ We should change the `serialVersionUID` when there is a significant, non-backwar
 - Changing field types
 - Changing class hierarchy
 
-[Example - Serialized]()
+[Example - Serialized](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%208/Serialize.java)
 
-[Example - Deserialized]()
+[Example - Deserialized](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%208/Deserialize.java)
 
 ---
 
@@ -50,7 +50,9 @@ Illustrate Serialization and Deserialization in write list of object (employee) 
 
 **The codes:**
 
-[Question 2 - Serialization and Deserialization in Write List of Object (Employee)]()
+[Question 2 - Serialize Employee](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%208/SerializeEmployee.java)
+
+[Question 2 - Deserialize Employee](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%208/DeserializeEmployee.java)
 
 **Explanation:**
 

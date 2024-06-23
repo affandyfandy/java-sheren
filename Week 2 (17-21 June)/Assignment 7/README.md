@@ -6,7 +6,7 @@ Remove duplicated items for any object and any duplicated fields.
 
 **The codes:**
 
-[Question 1 - Remove Duplicated Items for Any Object and Any Duplicated Fields]()
+[Question 1 - Remove Duplicated Items for Any Object and Any Duplicated Fields](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%207/RemoveDuplicatesGeneric.java)
 
 ```java
 import java.util.*;
@@ -285,7 +285,7 @@ public class WildcardDemo {
 
 ```
 
-[Question 2 - Using Wildcards With Generics]()
+[Question 2 - Using Wildcards With Generics](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%207/WildcardDemo.java)
 
 **Explanation:**
 
@@ -314,7 +314,7 @@ b) Find item has max value of any field
 
 **The codes:**
 
-[Question 3 - Sort and Find Item Has Max Value in List]()
+[Question 3 - Sort and Find Item Has Max Value in List](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%207/SortedMaxGeneric.java)
 
 ```java
 /* Input: list of any object
@@ -448,7 +448,7 @@ Convert list any object to map with any key field.
 
 **The codes:**
 
-[Question 4 - Convert List Any Object to Map with Any Key Field]()
+[Question 4 - Convert List Any Object to Map with Any Key Field](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%207/ListToMapGeneric.java)
 
 ```java
 // Convert list any object to map with any key field
@@ -563,7 +563,9 @@ Include: Object, size, pageNumber,...
 
 **The codes:**
 
-[Question 4 - Design Class Generic for Paging Data]()
+[Question 4 - Paged Data](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%207/PagedData.java)
+
+[Question 4 - Paging Demo](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%207/PagingDemo.java)
 
 **Explanation:**
 
