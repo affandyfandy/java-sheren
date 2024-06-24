@@ -11,7 +11,7 @@ Below is the project structure of this employee CRUD project:
 Add maven dependencies in `pom.xml`
 
 ```xml
-    <dependencies>
+	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -95,6 +95,7 @@ spring.jpa.show-sql=true
     
     ![Get all cemployees](img/getall.png)
 
+
     
 2. **Get employee detail by id (GET localhost:8080/api/v1/employee/1d61dd2d-f084-45e5-b561-c50dfed5468b)**
     
@@ -102,19 +103,23 @@ spring.jpa.show-sql=true
     
 
 
+
 3. **Create new employee (POST localhost:8080/api/v1/employee)**
     
     ![Create new employee](img/create.png)
+
 
     
 4. **Update employee by id (PUT localhost:8080/api/v1/employee/8m4422c6-3839-4052-b1f5-a6a349248a58)**
     
     ![Update employee detail by id](img/update.png)
 
+
     
 5. **Delete employee by id (DELETE localhost:8080/api/v1/employee/8m4422c6-3839-4052-b1f5-a6a349248a58)**
     
     ![Delete employee by id](img/delete.png)
+
 
     
 6. **Input CSV file (POST localhost:8080/api/v1/employee/upload-csv)**
@@ -126,6 +131,7 @@ spring.jpa.show-sql=true
     ![Result CSV](img/resultcsv.png)
 
     
-5. **Return employees by department (GET localhost:8080/api/v1/employee/by-department?department=MOBILE)**
+
+7. **Return employees by department (GET localhost:8080/api/v1/employee/by-department?department=MOBILE)**
     
     ![Return employee by department](img/bydept.png)
