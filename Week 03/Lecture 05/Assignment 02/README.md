@@ -3,6 +3,7 @@
 ### 1️⃣ Project structure
 
 Below is the project structure of this employee CRUD project:
+
 ![Project structure](img/projectstructure.png)
 
 ### 2️⃣ Add maven dependencies
@@ -10,7 +11,7 @@ Below is the project structure of this employee CRUD project:
 Add maven dependencies in `pom.xml`
 
 ```xml
-<dependencies>
+    <dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -74,51 +75,57 @@ spring.jpa.show-sql=true
 
 ### 5️⃣ Create model
 
-[Employee.java]()
+[Employee.java](https://github.com/affandyfandy/java-sheren/blob/week_03/Week%2003/Lecture%2005/Assignment%2002/employee_crud/src/main/java/com/example/employee_crud/model/Employee.java)
 
 ### 6️⃣ Create jpa repository
 
-[EmployeeRepository.java]()
+[EmployeeRepository.java](https://github.com/affandyfandy/java-sheren/blob/week_03/Week%2003/Lecture%2005/Assignment%2002/employee_crud/src/main/java/com/example/employee_crud/repository/EmployeeRepository.java)
 
 ### 7️⃣ Create controller
 
-[EmployeeController.java]()
+[EmployeeController.java](https://github.com/affandyfandy/java-sheren/blob/week_03/Week%2003/Lecture%2005/Assignment%2002/employee_crud/src/main/java/com/example/employee_crud/controller/EmployeeController.java)
 
 ### 8️⃣ Postman collection
 
-[employeeCRUD.postman_collection.java]()
+[employeeCRUD.postman_collection.java](https://github.com/affandyfandy/java-sheren/blob/week_03/Week%2003/Lecture%2005/Assignment%2002/employeeCRUD.postman_collection.json)
 
 ### 9️⃣ Result
 
 1. **Get all employees (GET localhost:8080/api/v1/employee)**
     
     ![Get all cemployees](img/getall.png)
+
     
 2. **Get employee detail by id (GET localhost:8080/api/v1/employee/1d61dd2d-f084-45e5-b561-c50dfed5468b)**
     
     ![Get employee detail by id](img/getbyid.png)
     
 
-1. **Create new employee (POST localhost:8080/api/v1/employee)**
+
+3. **Create new employee (POST localhost:8080/api/v1/employee)**
     
     ![Create new employee](img/create.png)
+
     
-2. **Update employee by id (PUT localhost:8080/api/v1/employee/8m4422c6-3839-4052-b1f5-a6a349248a58)**
+4. **Update employee by id (PUT localhost:8080/api/v1/employee/8m4422c6-3839-4052-b1f5-a6a349248a58)**
     
     ![Update employee detail by id](img/update.png)
+
     
-3. **Delete employee by id (DELETE localhost:8080/api/v1/employee/8m4422c6-3839-4052-b1f5-a6a349248a58)**
+5. **Delete employee by id (DELETE localhost:8080/api/v1/employee/8m4422c6-3839-4052-b1f5-a6a349248a58)**
     
-    ![Get contact detail by id](img/delete.png)
+    ![Delete employee by id](img/delete.png)
+
     
-4. **Input CSV file (localhost:8080/api/v1/employee/upload-csv)**
+6. **Input CSV file (POST localhost:8080/api/v1/employee/upload-csv)**
     
     ![Input CSV](img/uploadcsv.png)
     
     Result:
     
     ![Result CSV](img/resultcsv.png)
+
     
-5. **Return employees by department (localhost:8080/api/v1/employee/by-department?department=MOBILE)**
+5. **Return employees by department (GET localhost:8080/api/v1/employee/by-department?department=MOBILE)**
     
     ![Return employee by department](img/bydept.png)
