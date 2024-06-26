@@ -258,12 +258,12 @@ public class demo1 {
 
 ❔ **The issues:**
 
-The issue with the provided code is that it wants to add elements to the `data` list and iterate over it at the class level (outside of any method or constructor). In addition, modifying a list while iterating over it directly (in this case, it is removing an element) will cause a `ConcurrentModificationException`.
+The issue with the provided code is that it wants to add elements to the `data` list and iterate over it at the class level (outside of any method or constructor). In addition, modifying a collection (in this case, removing elements in `ArrayList`) while traversing over it using `for` loop will cause a `ConcurrentModificationException`.
 
 **Key issues:**
 
 - **Syntax error:** The code for adding elements to the list and the for-loop should be inside a method/a constructor. It is not valid syntax at the class level
-- Concurrent modification: Removing elements from a list while iterating over it using for-each loop can cause a `ConcurrentModificationException`.
+- Concurrent modification: Removing elements from a collecion (`ArrayList`) while traversing over it using for-each loop can cause a `ConcurrentModificationException`.
 
 👩‍💻 **The solution:**
 
@@ -271,7 +271,7 @@ To fix the issues, we can:
 
 ✅ Move the list initialization and manipulation code into a method
 
-✅ Use an iterator to safely remove elements while iterating over the list.
+✅ Use an explicit iterator to safely remove elements while iterating over the list.
 
 ```java
 import java.util.*;
@@ -285,12 +285,12 @@ public class demo1 {
         data.add("Rien");
         data.add("Ruby");
 
-        // Use an iterator to safely remove elements
+        // Use an explicit iterator to safely remove elements
         Iterator<String> iterator = data.iterator();
         while (iterator.hasNext()) {
             String d = iterator.next();
             if (d.equals("Test")) {
-                iterator.remove();
+                iterator.remove(); // Call remove method to safe removal of element
             }
         }
 
@@ -317,13 +317,14 @@ public class demo1 {
 
 Q: What happen multiple threads to access and modify a shared collection concurrently? Note: ConcurrencyModificationException
 
-When multiple threads access and modify a shared collection concurrently, an issue that is `ConcurrentModificationException` can arise.
+When multiple threads access and modify a shared collection concurrently, an issue that is `ConcurrentModificationException` can arise. Other than that, it can also happen when we try to modify a collection (like an `ArrayList`) while traversing over it using a `for-each` loop or similar constructs.
 
 ### ⚠️ Problems with Concurrent Access and Modification
 
 - **ConcurrentModificationException:**
     
-    This exception occurs when a thread tries to modify a collection while another thread is iterating over it. The collection’s internal state becomes inconsistent, leading to an exception
+    - Single-threaded Context: It occurs when we modify a collection (e.g., adding or removing elements) while traversing it using an enhanced for loop, which uses an iterator behind the scenes
+    - Multi-threaded Context: It occurs when one thread modifies the collection while another thread is iterating over it.
     
 - **Data inconsistency:**
     
@@ -332,9 +333,12 @@ When multiple threads access and modify a shared collection concurrently, an iss
 - **Race conditions:**
     
     Occur when the outcome of the program depends on the sequence/timing of uncontrollable events, such as thread scheduling. This can lead to unpredictable behavior and hard-to-find bugs.
-    
+ 
+### 👩‍🏫 Correct Way to Modify a Collection While Iterating  
 
-### **👩‍🏫 Example Scenario**
+To avoid `ConcurrentModificationException`, use an explicit iterator and call its remove method. 
+
+### **💻 Example Scenario**
 
 The following example is where multiple threads try to modify a shared `ArrayList`:
 
