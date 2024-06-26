@@ -18,7 +18,9 @@ package Q11;
 // }
 
 // The solution:
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 public class demo1 {
     public static void main(String[] args) {
@@ -29,12 +31,12 @@ public class demo1 {
         data.add("Rien");
         data.add("Ruby");
 
-        // Use an iterator to safely remove elements
+        // Use an explicit iterator to safely remove elements
         Iterator<String> iterator = data.iterator();
         while (iterator.hasNext()) {
             String d = iterator.next();
             if (d.equals("Test")) {
-                iterator.remove();
+                iterator.remove(); // Call remove method to safe removal of element
             }
         }
 
