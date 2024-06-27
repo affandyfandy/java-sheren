@@ -4,7 +4,9 @@
 
 Database normalization is a database design principle for organizing data in an organized and consistent way. It helps us avoid redundancy and maintain the integrity of the database. It is also used to eliminate undesirable characteristics like Insertion, Update, and Deletion Anomalies. Normalization divides the larger table into smaller and links them using relationships. The normal form is used to reduce redundancy from the database table.
 
-### ❔ Why do we need normalization?
+---
+
+### ❔ Why Do We Need Normalization?
 
 The main reason for normalizing the relations is removing these anomalies. Failure to eliminate anomalies leads to data redundancy and can cause data integrity and other problems as the database grows. Normalization consists of a series of guidelines that helps to guide us in creating a good database structure.
 
@@ -14,11 +16,15 @@ The main reason for normalizing the relations is removing these anomalies. Failu
 - **Deletion Anomaly:** Refers to the situation where the deletion of data results in the unintended loss of some other important data
 - **Update Anomaly:** When an update of a single data value requires multiple rows of data to be updated.
 
+---
+
 ### 👩‍🏫 Types of Normal Forms
 
 - 1NF, 2NF, and 3NF are the first three types of database normalization. They stand for **first normal form**, **second normal form**, and **third normal form**, respectively.
 - There are also 4NF (fourth normal form), and 5NF (fifth normal form). There is even 6NF (sixth normal form), but the commonest normal form we will see out there is 3NF (third normal form).
 - All the types of database normalization are cumulative. It means each one builds on top of those beneath it. So all the concepts in 1NF also carry over to 2NF, and so on.
+
+---
 
 ### 1️⃣ The First Normal Form - 1NF
 
@@ -51,6 +57,8 @@ To convert that table into 1NF, we split the `Projects` column into individual r
 | 3 | Sera Livia | Project C |
 
 This table is already 1NF table as a single cell only holds one value.
+
+---
 
 ### 2️⃣ The Second Normal Form - 2NF
 
@@ -93,6 +101,8 @@ To achieve 2NF, we need to separate the data into two tables, which one for empl
     | 2 | Project C |
     | 3 | Project A |
     | 3 | Project C |
+
+---
 
 ### 3️⃣ The Third Normal Form - 3NF
 
