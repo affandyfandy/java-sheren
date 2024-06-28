@@ -1,6 +1,6 @@
 ## 💡 Database (Invoices)
 
-[Codes]()
+[Codes](https://github.com/affandyfandy/java-sheren/blob/week_03/Week%2003/Lecture%2006/Assignment%2002/query.sql)
 
 ### 🗒️ Initialize Database
 
@@ -16,13 +16,13 @@ Write sql to create tables:
 - invoice_detail: id, quantity, product_id, product_price, invoice_id, amount
 - product: id, name, price
 
-1️⃣ **Create database**
+**1️⃣ Create database**
 
 ```sql
 CREATE DATABASE week03_invoice;
 ```
 
-2️⃣ **Create customer table**
+**2️⃣ Create customer table**
 
 ```sql
 CREATE TABLE customer (
@@ -34,7 +34,7 @@ CREATE TABLE customer (
 
 For all tables, I use auto_increment for id column.
 
-3️⃣ **Create cashier table**
+**3️⃣ Create cashier table**
 
 ```sql
 CREATE TABLE cashier (
@@ -43,7 +43,7 @@ CREATE TABLE cashier (
 );
 ```
 
-4️⃣ **Create product table**
+**4️⃣ Create product table**
 
 ```sql
 CREATE TABLE product (
@@ -53,7 +53,7 @@ CREATE TABLE product (
 );
 ```
 
-5️⃣ **Create invoice table**
+**5️⃣ Create invoice table**
 
 ```sql
 CREATE TABLE invoice (
@@ -67,7 +67,7 @@ CREATE TABLE invoice (
 );
 ```
 
-6️⃣ **Create invoice_detail table**
+**6️⃣ Create invoice_detail table**
 
 ```sql
 CREATE TABLE invoice_detail (
@@ -87,6 +87,8 @@ CREATE TABLE invoice_detail (
 ![Table creation result](img/table.png)
 
 In here, I use MySQL database in phpMyAdmin. All the tables are already created in week03_invoice database.
+
+---
 
 ### 📝 Design Database
 
@@ -163,7 +165,7 @@ Based on the invoice_detail: amount = quantity * amount rule.
 
 Below are the queries to calculate daily, monthly, and annual revenue:
 
-1️⃣ **Daily revenue**
+**1️⃣ Daily revenue**
 
 Query:
 
@@ -191,7 +193,7 @@ Result:
 
 ![Monthly revenue](img/monthly.png)
 
-3️⃣ **Annual revenue**
+**3️⃣ Annual revenue**
 
 Query:
 
