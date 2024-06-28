@@ -21,7 +21,7 @@ Based on assignment 2:
 
 Previously, I have created mock data.
 
-[Mocked data codes]([https://github.com/affandyfandy/java-sheren/blob/week_03/Week 03/Lecture 06/Assignment 02/query.sql](https://github.com/affandyfandy/java-sheren/blob/week_03/Week%2003/Lecture%2006/Assignment%2002/query.sql))
+[Mocked data codes](https://github.com/affandyfandy/java-sheren/blob/week_03/Week%2003/Lecture%2006/Assignment%2002/query.sql)
 
 Therefore, let’s get straight for creating a view to show list products customer bought.
 
