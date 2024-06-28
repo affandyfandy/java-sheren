@@ -161,6 +161,8 @@ INSERT INTO invoice_detail (quantity, product_id, product_price, invoice_id, amo
 
 Based on the invoice_detail: amount = quantity * amount rule.
 
+---
+
 ### ✏️ Queries to Calculate Revenue
 
 Below are the queries to calculate daily, monthly, and annual revenue:
