@@ -88,7 +88,7 @@ public class EmployeeController {
 
     // Delete employee by id
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Employee> deleteContact(@PathVariable(value = "id") String id) {
+    public ResponseEntity<Employee> deleteEmployee(@PathVariable(value = "id") String id) {
         Optional<Employee> employeeOpt = employeeRepository.findById(id);
         if(employeeOpt.isPresent()) {
             employeeRepository.delete(employeeOpt.get());
