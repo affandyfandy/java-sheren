@@ -1,13 +1,11 @@
 package com.example.assignment2.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeServiceConstructor {
     private final EmailService emailService;
 
-    @Autowired
     public EmployeeServiceConstructor(EmailService emailService) {
         this.emailService = emailService;
     }

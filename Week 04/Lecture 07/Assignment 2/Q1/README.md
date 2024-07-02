@@ -51,7 +51,6 @@ In this codes, we create `EmployeeService` class and use constructor DI to send 
 public class EmployeeServiceConstructor {
     private final EmailService emailService;
 
-    @Autowired
     public EmployeeServiceConstructor(EmailService emailService) {
         this.emailService = emailService;
     }
@@ -64,7 +63,7 @@ public class EmployeeServiceConstructor {
 ```
 
 - `@Service` annotation marks the class as a Spring service component, allowing it to be discovered and managed by Spring
-- `@Autowired` annotation tells Spring to use this constructor for dependency injection. Spring will automatically inject an `EmailService` bean when creating an instance of `EmployeeServiceConstructor`
+- As of Spring Framework 4.3, an `@Autowired` annotation on such a constructor is no longer necessary if the target bean defines only one constructor to begin with
 - The constructor takes one parameter, `emailService`, which is of type `EmailService`. Spring will pass an instance of a class that implements `EmailService` (e.g., `EmailServiceImpl`) to this constructor
 - `notifyEmployee` is a public method that takes a single parameter, `employeeEmail`, which is a `String`. The method calls the `sendEmail` method on the `emailService` instance, passing in the `employeeEmail`, a subject, and a body for the email. This simulates sending an email to the employee.
 
@@ -158,8 +157,14 @@ public class Assignment2Application {
 }
 ```
 
-- Annotation `@SpringBootApplication` marks the class as the entry point for a Spring Boot application, enabling auto-configuration and component scanning
+- Annotation ****`@SpringBootApplication` marks the class as the entry point for a Spring Boot application, enabling auto-configuration and component scanning
 - `ApplicationContext` is a central interface to provide configuration for an application
 - `AnnotationConfigApplicationContext` is an implementation of `ApplicationContext` reads Spring configuration from Java-based configuration classes
 - `context.getBean` method retrieves a bean from the Spring context (`EmployeeServiceConstructor`, `EmployeeServiceField`, `EmployeeServiceSetter`)
 - `notifyEmployee` method is called on the retrieved bean, demonstrating each type of dependency injection.
+
+---
+
+### 8️⃣ Result
+
+![Result](result.png)
