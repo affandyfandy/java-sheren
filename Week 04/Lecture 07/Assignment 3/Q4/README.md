@@ -32,4 +32,4 @@ Code in these packages provides the basis for Spring’s **Inversion of Control
 - Both `ApplicationContext` and `BeanFactory` containers are used to create and manage the bean objects
 - `BeanFactory` is the fundamental interface that provides all the basic functionality to create and manage the bean objects
 - `ApplicationContext` interface extends the `BeanFactory` interface. It provides all the basic functionality and also some advanced features like the ability to load file resources in a generic fashion, to publish events to registered listeners, to resolve messages, supporting internationalization, etc
-- Therefore, it’s always preferable to use ****`ApplicationContext` **when building complex enterprise applications.
+- Therefore, it’s always preferable to use `ApplicationContext` when building complex enterprise applications.
