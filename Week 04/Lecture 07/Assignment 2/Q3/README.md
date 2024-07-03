@@ -18,6 +18,8 @@ Spring will create bean C, then create bean B (and inject bean C into it), then 
 
 But with circular dependency, Spring cannot decide which of the beans should be created first since they depend on one another. In these cases, Spring will raise a `BeanCurrentlyInCreationException` while loading context. It can happen in Spring when using **constructor injection**, If we use other types of injections, we shouldn’t have this problem since the dependencies will be injected when they are needed and not on the context loading.
 
+---
+
 ### 👩‍💻 Example
 
 Before we have understood about circular dependency and the issue with it in Spring. Now, let’s understand this by codes. Let’s define two beans that depend on one another (via constructor injection).
@@ -72,6 +74,8 @@ public class Assignment2q3Application {
 ```
 
 If we try to run this test, we will get an exception: **`BeanCurrentlyInCreationException**: Error creating bean with name ‘beanA’: Requested bean is currently in creation: Is there an unresolvable circular reference?`
+
+---
 
 ### 💻 Solution
 
