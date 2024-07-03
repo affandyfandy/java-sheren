@@ -114,28 +114,28 @@ Clue: Using Stream with IO.
 By specifying both a start and end index, we can combine multiple columns to form a unique key for each line. This can be useful when a single column is not enough to uniquely identify a line.
 
 - Single column as key: ID1 is the key
-- Two columns as key: ID1 Name1 is the key.
+- Three columns as key: ID1 Name1 Data1 is the key.
 
 By specifying the two columns as a key from start index and end index, we will get a result like this:
 
 Input:
 ```java
-ID1 Name1 Data1
-ID1 Name2 Data1
-ID1 Name1 Data3
-ID2 Name2 Data2
-ID3 Name3 Data4
-ID2 Name2 Data5
-ID4 Name4 Data6
+ID1 Name1 Data1 Test1
+ID1 Name1 Data1 Test2
+ID1 Name2 Data1 Test1
+ID1 Name1 Data3 Test1
+ID2 Name2 Data2 Test3
+ID2 Name2 Data2 Test4
+ID3 Name3 Data4 Test4
 ```
 
 Output:
 ```java
-ID1 Name1 Data1
-ID1 Name2 Data1
-ID2 Name2 Data2
-ID3 Name3 Data4
-ID4 Name4 Data6
+ID1 Name1 Data1 Test1
+ID1 Name2 Data1 Test1
+ID1 Name1 Data3 Test1
+ID2 Name2 Data2 Test3
+ID3 Name3 Data4 Test4
 ```
 
 **Key points:**
