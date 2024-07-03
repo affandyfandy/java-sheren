@@ -68,7 +68,7 @@ public class Assignment3q3Application {
 }
 ```
 
-4️⃣ Output
+**4️⃣ Output**
 
 ![Output](problemresult.png)
 
@@ -83,7 +83,7 @@ The same prototype bean instance is used every time `performAction` is called on
 
 To solve this issue and ensure a new prototype bean instance is created each time, we can use one of the following methods:
 
-1️⃣ Using `@Lookup`
+**1️⃣ Using `@Lookup`**
 
 ```java
 @Component
@@ -105,7 +105,7 @@ public class SingletonBean {
 
 This method is simple but relies on Spring's dynamic method overriding.
 
-2️⃣ Using `ObjectFactory`
+**2️⃣ Using `ObjectFactory`**
 
 ```java
 @Component
