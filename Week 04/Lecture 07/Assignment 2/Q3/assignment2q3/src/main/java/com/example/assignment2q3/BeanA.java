@@ -9,7 +9,7 @@ public class BeanA {
     private BeanB beanB;
 
     @Autowired
-    public BeanA(@Lazy BeanB beanB) {
+    public BeanA(BeanB beanB) {
         this.beanB = beanB;
     }
 }
