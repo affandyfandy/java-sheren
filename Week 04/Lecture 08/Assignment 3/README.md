@@ -8,13 +8,25 @@ To make sure our project can retrieve data from multiple data sources, let’s a
 
 **2️⃣ Create DataSourceConfig**
 
-We can use bean to create datasource. Therefore, our `application.properties` right now is only like this:
+In `application.properties`, we store all the database information:
 
 ```java
 spring.application.name=crud_employee
+
+# Datasource 1
+spring.datasource1.url=jdbc:mysql://localhost:3306/week4_employee
+spring.datasource1.username=root
+spring.datasource1.password=
+spring.datasource1.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# Datasource 2
+spring.datasource2.url=jdbc:mysql://localhost:3306/week4_employeeclone
+spring.datasource2.username=root
+spring.datasource2.password=
+spring.datasource2.driver-class-name=com.mysql.cj.jdbc.Driver
 ```
 
-Here, we add `DataSourceConfig` file to manage the datasource using bean.
+Then, we add `DataSourceConfig` file to manage the datasource using bean.
 
 ```java
 package com.example.crud_employee.config;
@@ -22,23 +34,48 @@ package com.example.crud_employee.config;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 
 @Configuration
 public class DataSourceConfig {
 
+    @Value("${spring.datasource1.url}")
+    private String dataSource1Url;
+
+    @Value("${spring.datasource1.username}")
+    private String dataSource1Username;
+
+    @Value("${spring.datasource1.password}")
+    private String dataSource1Password;
+
+    @Value("${spring.datasource1.driver-class-name}")
+    private String dataSource1DriverClassName;
+
+    @Value("${spring.datasource2.url}")
+    private String dataSource2Url;
+
+    @Value("${spring.datasource2.username}")
+    private String dataSource2Username;
+
+    @Value("${spring.datasource2.password}")
+    private String dataSource2Password;
+
+    @Value("${spring.datasource2.driver-class-name}")
+    private String dataSource2DriverClassName;
+
     @Bean(name = "dataSource1")
     public DataSource dataSource1() {
         return DataSourceBuilder.create()
-                .url("jdbc:mysql://localhost:3306/week4_employee")
-                .username("root")
-                .password("")
-                .driverClassName("com.mysql.cj.jdbc.Driver")
+                .url(dataSource1Url)
+                .username(dataSource1Username)
+                .password(dataSource1Password)
+                .driverClassName(dataSource1DriverClassName)
                 .build();
     }
 
@@ -50,10 +87,10 @@ public class DataSourceConfig {
     @Bean(name = "dataSource2")
     public DataSource dataSource2() {
         return DataSourceBuilder.create()
-                .url("jdbc:mysql://localhost:3306/week4_employeeclone")
-                .username("root")
-                .password("")
-                .driverClassName("com.mysql.cj.jdbc.Driver")
+                .url(dataSource2Url)
+                .username(dataSource2Username)
+                .password(dataSource2Password)
+                .driverClassName(dataSource2DriverClassName)
                 .build();
     }
 
@@ -62,10 +99,21 @@ public class DataSourceConfig {
         return new JdbcTemplate(dataSource2);
     }
 
+    @Bean(name = "dataSource1TransactionManager")
+    public PlatformTransactionManager dataSource1TransactionManager(@Qualifier("dataSource1") DataSource dataSource1) {
+        return new DataSourceTransactionManager(dataSource1);
+    }
+
+    @Bean(name = "dataSource2TransactionManager")
+    public PlatformTransactionManager dataSource2TransactionManager(@Qualifier("dataSource2") DataSource dataSource2) {
+        return new DataSourceTransactionManager(dataSource2);
+    }
 }
+
 ```
 
-- **`dataSource1()` and `dataSource2()` methods**: These methods use `DataSourceBuilder.create()` to construct `DataSource` instances directly within the method. The properties (`url`, `username`, `password`, `driverClassName`) are specified directly in the method calls rather than being read from `application.properties`
+- **`@Value` annotations**: These annotations inject the values from the `application.properties` file into the fields defined in the configuration class
+- **`DataSource` beans**: The `dataSource1()` and `dataSource2()` methods use the injected values to create the data sources using `DataSourceBuilder.create()`
 - **`jdbcTemplate1()` and `jdbcTemplate2()` methods**: These methods create `JdbcTemplate` beans for each `DataSource`. The `@Qualifier` annotation is used to specify which `DataSource` bean (`dataSource1` or `dataSource2`) should be injected into the corresponding `JdbcTemplate`.
 
 **3️⃣ Update EmployeeDaoImpl**
@@ -279,7 +327,6 @@ Let’s try it on Postman.
 - Delete employee in datasource 2
     
     ![Result](img/del2.png)
-    
 
 ---
 
