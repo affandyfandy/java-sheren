@@ -50,6 +50,21 @@ public class EmployeeDaoImpl {
         jdbcTemplate1.update(sql, id);
     }
 
+    @Transactional(transactionManager = "dataSource1TransactionManager")
+    public void addEmployeeFail(Employee employee) {
+        String sql1 = "INSERT INTO employee (id, name, date_of_birth, address, department) VALUES (?,?,?,?,?)";
+        jdbcTemplate1.update(sql1, employee.getId(), employee.getName(), employee.getDate_of_birth(), employee.getAddress(), employee.getDepartment());
+
+        // Simulate a failure
+        if (true) {
+            throw new RuntimeException("Simulated failure");
+        }
+
+        String sql2 = "INSERT INTO employee2 (id, name, date_of_birth, address, department) VALUES (?,?,?,?,?)";
+        jdbcTemplate1.update(sql2, employee.getId(), employee.getName(), employee.getDate_of_birth(), employee.getAddress(), employee.getDepartment());
+    }
+
+
     // Methods for datasource 2
     public List<Employee> listEmployee2() {
         String sql = "SELECT * FROM employee";

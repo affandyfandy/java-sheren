@@ -117,6 +117,8 @@ public class EmployeeServiceSetter {
 
 ---
 
+### [BEFORE REVISION]
+
 ### 6️⃣ Create AppConfig class
 
 ```java
@@ -162,6 +164,44 @@ public class Assignment2Application {
 - `AnnotationConfigApplicationContext` is an implementation of `ApplicationContext` reads Spring configuration from Java-based configuration classes
 - `context.getBean` method retrieves a bean from the Spring context (`EmployeeServiceConstructor`, `EmployeeServiceField`, `EmployeeServiceSetter`)
 - `notifyEmployee` method is called on the retrieved bean, demonstrating each type of dependency injection.
+
+### [AFTER REVISION]
+
+Actually, we can skip `@ComponentScan`. `@SpringBootApplication` already includes component scanning by default for the package where the main application class resides and all its sub-packages. We just need to ensure our main application class is in the base package.
+
+Therefore, since we are using Spring Boot, we don’t need an additional `@ComponentScan` or `@Configuration` in `AppConfig` if our classes are in the right packages. Therefore, we remove`AppConfig` as is not doing anything special.
+
+**Main application:**
+
+```java
+@SpringBootApplication
+public class Assignment2Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Assignment2Application.class, args);
+
+		// Remove this one as we don't need AppConfig:
+		// ApplicationContext context = new AnnotationConfigApplicationContext(com.example.assignment2.config.AppConfig.class);
+		ApplicationContext context = SpringApplication.run(Assignment2Application.class, args);
+
+		// Use constructor DI
+		EmployeeServiceConstructor employeeServiceConstructor = context.getBean(EmployeeServiceConstructor.class);
+        employeeServiceConstructor.notifyEmployee("sheren@gmail.com");
+
+		// Use field DI
+		EmployeeServiceField employeeServiceField = context.getBean(EmployeeServiceField.class);
+        employeeServiceField.notifyEmployee("sheren@gmail.com");
+
+		// Use setter DI
+		EmployeeServiceSetter employeeServiceSetter =  context.getBean(EmployeeServiceSetter.class);
+		employeeServiceSetter.notifyEmployee("sheren@gmail.com");
+	}
+}
+```
+
+**Result:**
+
+![Result](result2.png)
 
 ---
 

@@ -73,6 +73,16 @@ public class EmployeeController {
         }
     }
 
+    @PostMapping("/datasource1/fail")
+    public ResponseEntity<String> addEmployeeFail(@RequestBody Employee employee) {
+        try {
+            employeeDao.addEmployeeFail(employee);
+            return ResponseEntity.ok("Employee added successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Transaction failed and rolled back: " + e.getMessage());
+        }
+    }
+
     // Methods for datasource 2
     @GetMapping("/datasource2")
     public ResponseEntity<List<Employee>> listAllEmployee2() {

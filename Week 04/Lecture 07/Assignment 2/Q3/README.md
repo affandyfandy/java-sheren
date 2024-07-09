@@ -18,6 +18,8 @@ Spring will create bean C, then create bean B (and inject bean C into it), then 
 
 But with circular dependency, Spring cannot decide which of the beans should be created first since they depend on one another. In these cases, Spring will raise a `BeanCurrentlyInCreationException` while loading context. It can happen in Spring when using **constructor injection**, If we use other types of injections, we shouldn’t have this problem since the dependencies will be injected when they are needed and not on the context loading.
 
+We should try to avoid Cicular DI because it is really **hard to debug and maintain**. It becomes difficult to track the flow of dependencies.
+
 ---
 
 ### 👩‍💻 Example

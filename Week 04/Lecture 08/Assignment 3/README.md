@@ -437,6 +437,59 @@ Same with add scenario,
 
 ---
 
+### 👩‍💻 Case When @Transactional Does Not Work
+
+To demonstrate a case where the `@Transactional` annotation does not work as expected, we can set up a scenario where a failure occurs after a successful insert into one table but before the insert into another table.
+
+**1️⃣  Add new method in EmployeeDaoImpl**
+
+```
+@Transactional(transactionManager = "dataSource1TransactionManager")
+    public void addEmployeeFail(Employee employee) {
+        String sql1 = "INSERT INTO employee (id, name, date_of_birth, address, department) VALUES (?,?,?,?,?)";
+        jdbcTemplate1.update(sql1, employee.getId(), employee.getName(), employee.getDate_of_birth(), employee.getAddress(), employee.getDepartment());
+
+        // Simulate a failure
+        if (true) {
+            throw new RuntimeException("Simulated failure");
+        }
+
+        String sql2 = "INSERT INTO employee2 (id, name, date_of_birth, address, department) VALUES (?,?,?,?,?)";
+        jdbcTemplate1.update(sql2, employee.getId(), employee.getName(), employee.getDate_of_birth(), employee.getAddress(), employee.getDepartment());
+    }
+```
+
+- The `@Transactional` annotation is used to manage transactions. In the `addEmployeeFail` method, we first insert data into the `employee` table and then simulate a failure before inserting data into another table. This should trigger a rollback of the transaction
+- The `RuntimeException` simulates a failure after the first insert but before the second insert. This should cause the transaction to fail, and the `@Transactional` annotation should ensure that the first insert is rolled back.
+
+**2️⃣ Add a new endpoint in EmployeeController**
+
+```
+    @PostMapping("/datasource1/fail")
+    public ResponseEntity<String> addEmployeeFail(@RequestBody Employee employee) {
+        try {
+            employeeDao.addEmployeeFail(employee);
+            return ResponseEntity.ok("Employee added successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Transaction failed and rolled back: " + e.getMessage());
+        }
+    }
+```
+
+**3️⃣ Result**
+
+![Result](img/failtrans.png)
+
+Since we are simulating a failure in this case, we should receive a message indicating that the transaction failed and rolled back.
+
+After that, we need to verify that the data was not inserted into the `employee` table.
+
+![Check](img/check.png)
+
+This query return no rows as the rollback was successful.
+
+---
+
 ## 💡 Lombok Library
 
 Q: Research Lombok and add to project   

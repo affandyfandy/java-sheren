@@ -263,6 +263,4 @@ spring.jpa.show-sql=true
 - `spring.datasource.url`: Defines the JDBC URL to connect to the database
 - `spring.datasource.username`: Specifies the username for the database connection
 - `spring.datasource.password`: Specifies the password for the database connection
-- `spring.datasource.driver-class-name`: Defines the fully qualified name of the JDBC driver class. Here, `com.mysql.cj.jdbc.Driver` specifies the MySQL JDBC driver class
-- `spring.jpa.hibernate.ddl-auto`: Configures the behavior of Hibernate's automatic schema generation
-- `spring.jpa.show-sql`:  Enables logging of SQL statements executed by Hibernate.
+- `spring.datasource.driver-class-name`: Defines the fully qualified name of the JDBC driver class. Here, `com.mysql.cj.jdbc.Driver` specifies the MySQL JDBC driver class.
