@@ -8,7 +8,7 @@
 
 **2️⃣ Add maven dependencies**
 
-Add maven dependencies in [pom.xml]() in the project.
+Add maven dependencies in [pom.xml](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2001/assignment1/pom.xml) in the project.
 
 ---
 
@@ -55,7 +55,7 @@ Configure properties in `application.resources`.
 
 Create `Employee` model in the model folder.
 
-[Employee.java]()
+[Employee.java](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2001/assignment1/src/main/java/com/example/assignment1/model/Employee.java)
 
 ---
 
@@ -63,7 +63,7 @@ Create `Employee` model in the model folder.
 
 Create `EmployeeRepository` in the repository folder.
 
-[EmployeeRepository.java]()
+[EmployeeRepository.java](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2001/assignment1/src/main/java/com/example/assignment1/repository/EmployeeRepository.java)
 
 ---
 
@@ -71,11 +71,11 @@ Create `EmployeeRepository` in the repository folder.
 
 Create `EmployeeService` in the service folder.
 
-[EmployeeService.java]()
+[EmployeeService.java](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2001/assignment1/src/main/java/com/example/assignment1/service/EmployeeService.java)
 
 Then, create `EmployeeServiceImpl` in the `service\impl` folder.
 
-[EmployeeServiceImpl.java]()
+[EmployeeServiceImpl.java](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2001/assignment1/src/main/java/com/example/assignment1/service/impl/EmployeeServiceImpl.java)
 
 ---
 
@@ -83,7 +83,7 @@ Then, create `EmployeeServiceImpl` in the `service\impl` folder.
 
 Create `Controller` in the controller folder.
 
-[EmployeeController.java]()
+[EmployeeController.java](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2001/assignment1/src/main/java/com/example/assignment1/controller/EmployeeController.java)
 
 ---
 
@@ -91,9 +91,9 @@ Create `Controller` in the controller folder.
 
 Implement HTML in:
 
-- [index.html]() in `resources\static`
-- [employee-form.html]() in `resources\templates\employees`
-- [list-employees.html]() in `resources\templates\employees`.
+- [index.html](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2001/assignment1/src/main/resources/static/index.html) in `resources\static`
+- [employee-form.html](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2001/assignment1/src/main/resources/templates/employees/employee-form.html) in `resources\templates\employees`
+- [list-employees.html](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2001/assignment1/src/main/resources/templates/employees/list-employees.html) in `resources\templates\employees`.
 
 ---
 
