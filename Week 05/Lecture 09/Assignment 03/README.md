@@ -60,7 +60,7 @@ assignment3
 
 ### 💻 **Add maven dependencies**
 
-See all maven dependencies in [pom.xml]() in the project. In this project, we add two more dependencies.
+See all maven dependencies in [pom.xml](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2003/assignment3/pom.xml) in the project. In this project, we add two more dependencies.
 
 ```xml
     <dependency>

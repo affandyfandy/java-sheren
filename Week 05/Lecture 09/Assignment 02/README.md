@@ -57,7 +57,7 @@ assignment2
 
 ### 💻 **Add maven dependencies**
 
-Add maven dependencies in [pom.xml]() in the project.
+Add maven dependencies in [pom.xml](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2002/assignment2/pom.xml) in the project.
 
 ---
 
@@ -401,8 +401,8 @@ Implement HTML in:
         content="0; URL='employees/list'">
     ```
     
-- [list-employees.html]() in `resources\templates\employees`
-- [employee-form.html]() in `resources\templates\employees`.
+- [list-employees.html](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2002/assignment2/src/main/resources/templates/employees/list-employees.html) in `resources\templates\employees`
+- [employee-form.html](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2009/Assignment%2002/assignment2/src/main/resources/templates/employees/employee-form.html) in `resources\templates\employees`.
 
 ---
 
