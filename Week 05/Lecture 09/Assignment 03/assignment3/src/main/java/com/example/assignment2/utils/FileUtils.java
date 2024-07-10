@@ -1,7 +1,6 @@
 package com.example.assignment2.utils;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.time.LocalDate;
@@ -26,7 +25,7 @@ public class FileUtils {
         List<Employee> employees = new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
             String line;
-            boolean isFirstLine = true; // To skip the first line (header)
+            boolean isFirstLine = true; // Flag to skip the first line (header)
             while ((line = br.readLine()) != null) {
                 if (isFirstLine) {
                     isFirstLine = false;
@@ -44,9 +43,10 @@ public class FileUtils {
                     employees.add(employee);
                 }
             }
-        } catch (IOException e) {
-            System.err.println("Error reading the CSV file: " + e.getMessage());
+        } catch (Exception e) {
+        
         } 
         return employees;
     }
+
 }
