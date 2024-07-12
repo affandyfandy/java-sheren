@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "838af961-05e0-45c5-a26f-39135302d192",
+		"name": "Employee CRUD - Lecture 10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7161256"
+	},
+	"item": [
+		{
+			"name": "Get all employees",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employee",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "employee"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get employee by id",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employee/1d61dd2d-f084-45e5-b561-c50dfed5468b",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "employee", "1d61dd2d-f084-45e5-b561-c50dfed5468b"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new employee",
+			"request": {
+				"method": "POST",
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employee",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "employee"]
+				},
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"name\": \"Sheren Yang\",\n    \"dateOfBirth\": \"2004-07-17\",\n    \"address\": \"Rawa Street\",\n    \"department\": \"QA\",\n    \"email\": \"sheren@gmail.com\",\n    \"phone\": \"+6285195018779\"\n}"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update employee",
+			"request": {
+				"method": "PUT",
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employee/1d61dd2d-f084-45e5-b561-c50dfed5468b",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "employee", "1d61dd2d-f084-45e5-b561-c50dfed5468b"]
+				},
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"name\": \"Sheren Update\",\n    \"dateOfBirth\": \"2004-08-17\",\n    \"address\": \"Rawa Buaya Street\",\n    \"department\": \"QA\",\n    \"email\": \"sherenyang@gmail.com\",\n    \"phone\": \"+6285195018775\"\n}"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete employee",
+			"request": {
+				"method": "DELETE",
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employee/1d61dd2d-f084-45e5-b561-c50dfed5468b",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "employee", "1d61dd2d-f084-45e5-b561-c50dfed5468b"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload CSV file",
+			"request": {
+				"method": "POST",
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employee/upload-csv",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "employee", "upload-csv"]
+				},
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get employees by department",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://localhost:8080/api/v1/employee/department?department=MOBILE",
+					"host": ["localhost"],
+					"port": "8080",
+					"path": ["api", "v1", "employee", "department"],
+					"query": [
+						{
+							"key": "department",
+							"value": "MOBILE"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
