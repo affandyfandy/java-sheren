@@ -6,7 +6,7 @@
 - Use id by uuid
 - Use dto and mapstruct
 - Handle exception
-- Validate email, name (notnull, only text), phone as your country format phone
+- Validate email, name (notnull, only text), phone as your country format phone.
 
 ### 🌳 **Project structure**
 
@@ -62,7 +62,7 @@ The project structure is already following the standard.
 
 ### 💻 **Add maven dependencies**
 
-See all maven dependencies in [pom.xml]() in the project.
+See all maven dependencies in [pom.xml](https://github.com/affandyfandy/java-sheren/blob/week_05/Week%2005/Lecture%2010/Assignment%2001/employee_crud/pom.xml) in the project.
 
 ---
 
