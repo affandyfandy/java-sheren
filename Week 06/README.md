@@ -2,7 +2,7 @@
 
 - Q: Research about Hibernate cache
     
-    See the answer here: [Hibernate Cache]()
+    See the answer here: [Hibernate Cache](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/HibernateCache.md)
     
 - Create entities as a ERD
 - Design REST API with below functions
@@ -36,12 +36,12 @@ employee_crud
 │       │               │       SearchCriteriaDTO.java
 │       │               │
 │       │               ├───exception
-│       │               │   │   DepartmentAlreadyExistsException..java
+│       │               │   │   DepartmentAlreadyExistsException.java
 │       │               │   │   EmployeeAlreadyExistsException.java
 │       │               │   │   ResourceNotFoundException.java
 │       │               │   │
-│		    │               │   └───handler
-│		    │               │           GlobalExceptionHandler.java
+│       │               │   └───handler
+│       │               │           GlobalExceptionHandler.java
 │       │               │
 │       │               ├───model
 │       │               │       Department.java
@@ -57,22 +57,22 @@ employee_crud
 │       │               │       SalaryRepository.java
 │       │               │       TitleRepository.java
 │       │               │ 
-│		    │               ├───service
-│		    │               │   │   DepartmentService.java
-│		    │               │   │   EmployeeService.java
-│		    │               │   │   SalaryService.java
-│		    │               │   │   TitleService.java
-│		    │               │   │
-│		    │               │   └───impl
-│		    │               │           DepartmentServiceImpl.java
-│		    │               │           EmployeeServiceImpl.java
-│		    │               │           SalaryServiceImpl.java
-│		    │               │           TitleServiceImpl.java
-│		    │               │
-│		    │               └───specification
-│		    │                       EmployeeSpecification.java
-│		    │                       EmployeeSpecificationBuilder.java
-│		    │                       SearchCriteria.java
+│       │               ├───service
+│       │               │   │   DepartmentService.java
+│       │               │   │   EmployeeService.java
+│       │               │   │   SalaryService.java
+│       │               │   │   TitleService.java
+│       │               │   │
+│       │               │   └───impl
+│       │               │           DepartmentServiceImpl.java
+│       │               │           EmployeeServiceImpl.java
+│       │               │           SalaryServiceImpl.java
+│       │               │           TitleServiceImpl.java
+│       │               │
+│       │               └───specification
+│       │                       EmployeeSpecification.java
+│       │                       EmployeeSpecificationBuilder.java
+│       │                       SearchCriteria.java
 │       │
 │       └───resources
 │           └───application.properties
@@ -85,13 +85,14 @@ employee_crud
 ├───mvnw
 ├───mvnw.cmd
 └───pom.xml
+
 ```
 
 ---
 
 ### 💻 **Add maven dependencies**
 
-See all maven dependencies in [pom.xml]() in the project.
+See all maven dependencies in [pom.xml](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/pom.xml) in the project.
 
 ---
 
@@ -211,18 +212,18 @@ Previously, we have created tables in the database based on the ERD.
 
 From that, we create entities for Employee, Department, DeptEmp, DeptManager, Salary, and Title.
 
-- [Employee Codes]()
-- [Department Codes]()
-- [DeptEmp Codes]()
+- [Employee Codes](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/src/main/java/com/example/employee_management/model/Employee.java)
+- [Department Codes](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/src/main/java/com/example/employee_management/model/Department.java)
+- [DeptEmp Codes](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/src/main/java/com/example/employee_management/model/DeptEmp.java)
     - **Composite key class (`DeptEmpId`)**: This class is marked with `@Embeddable`, indicating it can be embedded in another entity. It contains `empNo` and `deptNo` which together form the composite key
     - **Entity class (`DeptEmp`)**: The `@EmbeddedId` annotation tells JPA that the composite key is defined in the `DeptEmpId` class. The `DeptEmp` entity uses `DeptEmpId` to represent its primary key.
-- [DeptManager Codes]()
+- [DeptManager Codes](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/src/main/java/com/example/employee_management/model/DeptManager.java)
 Similar to `DeptEmp`, `DeptManager` uses a composite key class `DeptManagerId` annotated with `@Embeddable`. This composite key includes `empNo` and `deptNo`.
-- [Salary Codes]()
+- [Salary Codes](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/src/main/java/com/example/employee_management/model/Salary.java)
     - `Salary` uses a composite key `SalaryId` consisting of `empNo` and `fromDate`
     - The `SalaryId` class is annotated with `@Embeddable`
     - The `Salary` entity uses `@EmbeddedId` to indicate the use of `SalaryId` as the primary key.
-- [Title Codes]()
+- [Title Codes](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/src/main/java/com/example/employee_management/model/Title.java)
     - `Title` uses a composite key `TitleId` that consists of `empNo`, `title`, and `fromDate`
     - `@EmbeddedId` is used to indicate that `TitleId` is the composite key.
     
@@ -236,7 +237,7 @@ Similar to `DeptEmp`, `DeptManager` uses a composite key class `DeptManagerId` a
 
 We can run the program and test it in postman. This is the postman collection to demonstrate API functionality:
 
-[Postman Collection]()
+[Postman Collection](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/Week06CRUD.postman-collection.json)
 
 ### 1️⃣ Employee
 
@@ -356,7 +357,7 @@ We can run the program and test it in postman. This is the postman collection to
 
 - Create `SearchCriteria`
     
-    [SearchCriteria]()
+    [SearchCriteria](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/src/main/java/com/example/employee_management/specification/SearchCriteria.java)
     
     This class holds the search criteria details:
     
@@ -365,21 +366,21 @@ We can run the program and test it in postman. This is the postman collection to
     - `value`: The value to be matched against the field.
 - Create `SearchCriteriaDTO`
     
-    [SearchCriteriaDTO]()
+    [SearchCriteriaDTO](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/src/main/java/com/example/employee_management/dto/SearchCriteriaDTO.java)
     
     This Data Transfer Object (DTO) is used to transfer search criteria data between layers:
     
     - Similar to `SearchCriteria`, but the `value` is a string for easier transfer and handling.
 - Create `EmployeeSpecification`
     
-    [EmployeeSpecification]()
+    [EmployeeSpecification](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/src/main/java/com/example/employee_management/specification/EmployeeSpecification.java)
     
     This class implements `Specification<Employee>` to build the predicates for queries based on search criteria:
     
     - Uses `CriteriaBuilder` to construct the query predicates.
 - Create `EmployeeSpecificationBuilder`
     
-    [EmployeeSpecificationBuilder]()
+    [EmployeeSpecificationBuilder](https://github.com/affandyfandy/java-sheren/blob/week_06/Week%2006/employee_management/src/main/java/com/example/employee_management/specification/EmployeeSpecificationBuilder.java)
     
     This builder class aggregates multiple `EmployeeSpecification` instances to create a combined `Specification<Employee>`:
     
@@ -436,6 +437,6 @@ We can run the program and test it in postman. This is the postman collection to
 
 ![Result](img/searchnamedate.png)
 
-**GET localhost:8080/api/v1/employee/search?firstName=Sera&lastName=Natasha&hireDate=2018-01-01**
+**GET localhost:8080/api/v1/employee/search?gender=M**
 
 ![Result](img/searchgender.png)
