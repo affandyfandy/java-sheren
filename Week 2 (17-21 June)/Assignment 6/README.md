@@ -110,6 +110,34 @@ Clue: Using Stream with IO.
 
 [Question 3 - Remove Lines Which is Duplicated Data By Key Field](https://github.com/affandyfandy/java-sheren/blob/main/Week%202%20(17-21%20June)/Assignment%206/RemoveDuplicatesTxt.java)
 
+**Explanation:**
+By specifying both a start and end index, we can combine multiple columns to form a unique key for each line. This can be useful when a single column is not enough to uniquely identify a line.
+
+- Single column as key: ID1 is the key
+- Three columns as key: ID1 Name1 Data1 is the key.
+
+By specifying the two columns as a key from start index and end index, we will get a result like this:
+
+Input:
+```java
+ID1 Name1 Data1 Test1
+ID1 Name1 Data1 Test2
+ID1 Name2 Data1 Test1
+ID1 Name1 Data3 Test1
+ID2 Name2 Data2 Test3
+ID2 Name2 Data2 Test4
+ID3 Name3 Data4 Test4
+```
+
+Output:
+```java
+ID1 Name1 Data1 Test1
+ID1 Name2 Data1 Test1
+ID1 Name1 Data3 Test1
+ID2 Name2 Data2 Test3
+ID3 Name3 Data4 Test4
+```
+
 **Key points:**
 
 - **Streams and Collectors**:
