@@ -80,6 +80,7 @@ public class HelloController {
 When a request is made to any endpoint, `CustomOncePerRequestFilter` will be executed once per request.
 
 **Result**
+
 ![Result](result.png)
 
 The filter will print `CustomOncePerRequestFilter is executed` to the console every time a request is processed, ensuring that the filter is applied correctly.
