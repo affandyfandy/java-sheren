@@ -172,7 +172,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
 Here, we modify the controller to print the username and timestamp from the headers.
 
-[Controller Codes]()
+[Controller Codes](https://github.com/affandyfandy/java-sheren/blob/week_08/Week%2008/Lecture%2015/Assignment%2003/assignment3/src/main/java/com/example/assignment3/controller/DepartmentController.java)
 
 Each method retrieves `username` and `timestamp` from the request attributes (set by the interceptor) and includes them in the response.
 
