@@ -18,11 +18,11 @@
 
 **Example implementation:**
 
-[FeignClient Codes]()
+[FeignClient Codes](https://github.com/affandyfandy/java-sheren/tree/week_08/Week%2008/Lecture%2016/FeignClient%20Demo/feignClient)
 
 Article source:
 
-[Baeldung Spring Cloud OpenFeign]()
+[Baeldung Spring Cloud OpenFeign](https://www.baeldung.com/spring-cloud-openfeign)
 
 ![Result](img/FC1.png)
 
@@ -52,11 +52,11 @@ Article source:
 
 **Example implementation:**
 
-[RestTemplate Codes]()
+[RestTemplate Codes](https://github.com/affandyfandy/java-sheren/tree/week_08/Week%2008/Lecture%2016/RestTemplate%20Demo/restTemplate)
 
 Article source:
 
-[Baeldung RestTemplate]()
+[Baeldung RestTemplate](https://www.baeldung.com/rest-template)
 
 ![Result](img/rt1.png)
 
@@ -90,13 +90,13 @@ Article source:
 
 **Example implementation:**
 
-[WebClient Codes]()
+[WebClient Codes](https://github.com/affandyfandy/java-sheren/tree/week_08/Week%2008/Lecture%2016/WebClient%20Demo/webClient)
 
 Article sources:
 
-[Baeldung Spring 5 WebClient]()
+[Baeldung Spring 5 WebClient](https://www.baeldung.com/spring-5-webclient)
 
-[Baeldung Spring WebClient JSON List]()
+[Baeldung Spring WebClient JSON List](https://www.baeldung.com/spring-webclient-json-list)
 
 ![Result](img/wc1.png)
 
