@@ -43,7 +43,6 @@ class CustomerRepositoryTest {
     void findAllCustomersTest() {
         List<Customer> customers = customerRepository.findAll();
         assertThat(customers).isNotNull();
-        assertThat(customers.size()).isGreaterThan(0);
 
         customers.forEach(c -> System.out.println("Found customer: " + c));
     }

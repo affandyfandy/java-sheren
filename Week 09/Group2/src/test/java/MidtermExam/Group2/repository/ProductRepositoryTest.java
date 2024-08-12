@@ -118,11 +118,11 @@ class ProductRepositoryTest {
 
     @Test
     void findByStatusTest() {
-        Product product = new Product();
-        product.setName("Status Test Product");
-        product.setPrice(BigDecimal.valueOf(69.99));
-        product.setStatus(Status.INACTIVE);
-        productRepository.save(product);
+        Product statusProduct = new Product();
+        statusProduct.setName("Status Test Product");
+        statusProduct.setPrice(BigDecimal.valueOf(69.99));
+        statusProduct.setStatus(Status.INACTIVE);
+        productRepository.save(statusProduct);
 
         Pageable pageable = PageRequest.of(0, 10);
         Page<Product> foundProducts = productRepository.findByStatus(Status.INACTIVE, pageable);
@@ -135,14 +135,14 @@ class ProductRepositoryTest {
 
     @Test
     void findByNameContainingIgnoreCaseAndStatusTest() {
-        Product product = new Product();
-        product.setName("Test Status Product");
-        product.setPrice(BigDecimal.valueOf(79.99));
-        product.setStatus(Status.ACTIVE);
-        productRepository.save(product);
+        Product testProduct = new Product();
+        testProduct.setName("Test Product");
+        testProduct.setPrice(BigDecimal.valueOf(79.99));
+        testProduct.setStatus(Status.ACTIVE);
+        productRepository.save(testProduct);
 
         Pageable pageable = PageRequest.of(0, 10);
-        Page<Product> foundProducts = productRepository.findByNameContainingIgnoreCaseAndStatus("status", Status.ACTIVE, pageable);
+        Page<Product> foundProducts = productRepository.findByNameContainingIgnoreCaseAndStatus("test", Status.ACTIVE, pageable);
 
         assertThat(foundProducts).isNotNull();
         assertThat(foundProducts.getContent().size()).isEqualTo(1);

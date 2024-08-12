@@ -2,7 +2,6 @@ package MidtermExam.Group2.controller;
 
 import MidtermExam.Group2.dto.ProductDTO;
 import MidtermExam.Group2.service.impl.ProductServiceImpl;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -16,7 +15,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.http.MediaType;
 import org.springframework.web.multipart.MultipartFile;
 

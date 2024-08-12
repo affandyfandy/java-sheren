@@ -1,83 +1,109 @@
-# POS - Point of Sale System
+## 💡 Unit Test and Ensure Code Quality With Sonar
 
-## Overview
-This POS system is a comprehensive solution for managing invoices, products, and customers. Built using `Spring Boot` and `MySQL`, it features a `RESTful API` architecture with Swagger documentation, pagination, validation, and time-stamped entities.
+This project is the continuity of the mid-term project, that is POS (Point of Sales) system. Here, we conduct a unit test and ensure code quality with Sonar.
 
-## Features
+### ☁️ Using h2 for data access layer
 
-1. **Common Requirements**
-   - All APIs support pagination.
-   - RESTful API design follows best practices.
-   - Parameter validation.
-   - Entities include `created_time` and `updated_time`.
-   - API documentation via Swagger.
+There are two ways to test repository codes. The first option is using `@DataJpaTest` and not using embedded database. The second option is using a test database, for example, h2. For this option, the test database is separated with our application database. This is preferred as it does not touch the real database. To use h2 for data access layer, we need to config h2 database in `application.properties` for test:
 
-2. **Invoice Management**
-   - **Invoice List**
-     - Search by customer name using a wildcard search (`like %input%`).
-     - Filter by customer ID, date, or month.
-     - Sort invoices by date or amount.
-     - Fields: `id`, `invoice amount`, `customer name`, `invoice date`.
-   - **Add New Invoice**
-     - Select customer.
-     - Add new invoice.
-     - Add products to the invoice and adjust quantities.
-     - Validate products are configured and active.
-   - **Show Invoice Detail**
-     - Displays customer details (`id`, `name`).
-     - Invoice details (`id`, `invoice amount`, `invoice date`).
-     - List of products with quantity, price, and total amount.
-   - **Export PDF**
-     - Export detailed invoice information to PDF.
-   - **Edit Invoice**
-     - Editable within 10 minutes from creation.
-     - Similar to adding a new invoice.
+```java
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=create-drop
+```
 
-3. **Product Management**
-   - List products with fields: `id`, `name`, `price`, `status`.
-   - Search products by name or status, sort by name or price.
-   - Add, edit, activate/deactivate products.
-   - Import products from an Excel file.
+Then, we can start testing our repository codes. I have already implemented h2 for data access layer on my repository codes.
 
-4. **Customer Management**
-   - List customers with fields: `id`, `name`, `phone number`.
-   - Add new customers.
-   - Edit customer details.
-   - Activate/deactivate customers.
+---
 
-5. **Reports (Optional)**
-   - Generate revenue reports by day, month, or year.
+### 🗓️ Using Mock/Spy/Mockbean …
 
-6. **Excel Export (Optional)**
-   - Export list of invoices to Excel based on filters: customer, month, year.
-   - Include details: `invoice id`, `customer id`, `customer name`, `amount`, list of products (`id`, `name`, `price`, `quantity`, `amount`).
+There are two ways to test controller. The first one is using `@WebMvcTest` to mock and the second one is using `@ExtendWith(SpringExtension.class)` and `MockHttpServletRequestBuilder`. In this project, I have implemented `@WebMvcTest` to test the controller codes.
 
-## Common Rules
-- **Main Tasks**
-  - Design business flow, database, and API documentation.
-- **Git Workflow**
-  - Establish code structure on `main`/`develop` branch initially.
-  - Branch out feature branches from `develop` (naming: `feature/[description]`).
-  - Create PRs, perform peer reviews, and include trainers for review before merging.
+For service codes, there are three ways to do testing. First, we can use `@SpringBootTest` for end to end testing. Second, we can use `@ExtendWith(SpringExtension.class)` and `@MockBean.` Last, we can use `@ExtendWith(MockitoExtension.class)`, `@InjectMock` for class under test, and `@Mock` for mock class. In this project, I have implemented the second option in `ProductServiceImplTest` and I use the third option for the other services because it makes our test easier as everything is in the mock and not load all application context.
 
-## Technologies Used
-- Spring Boot
-- MySQL
-- Swagger for API Documentation
+---
 
-## Installation
-1. Clone the repository.
-2. Set up the `MySQL` database and update the connection settings in `application.properties`.
-3. Build and run the project using Maven.
+### 🌐 Install SonarLint inteliij plugin and code coverage
 
-## Contributing
-1. Fork the repository.
-2. Create a new branch (`feature/[description]`).
-3. Make your changes and commit them.
-4. Push to the branch and open a pull request.
+I have installed SonarLint plugin in my inteliij.
 
-## License
-This project is licensed under the MIT License.
+![SonarLint](img/slint.png)
 
-## Contact
-For further inquiries or issues, please contact.
+**Code coverage on inteliij**
+
+![SonarLint](img/slintcode.png)
+
+---
+
+### ⌨️  **Code coverage report with JaCoCo**
+
+To do this, we need to add JaCoCo plugin first:
+
+```java
+<plugin>
+	<groupId>org.jacoco</groupId>
+	<artifactId>jacoco-maven-plugin</artifactId>
+	<version>0.8.8</version>
+	<executions>
+		<execution>
+			<id>prepare-agent</id>
+			<goals>
+				<goal>prepare-agent</goal>
+			</goals>
+		</execution>
+		<execution>
+			<id>report</id>
+			<phase>prepare-package</phase>
+			<goals>
+				<goal>report</goal>
+			</goals>
+		</execution>
+	</executions>
+</plugin>
+```
+
+Then, we can run unit test (with `mvn package` no skip test). We can find test report detail in `/target` folder `(/site/jacoco/index.html)`. After that, we can push coverage report to SonarQube by config directly in `pom.xml`:
+
+```java
+<properties>
+  <java.version>17</java.version>
+  <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+  <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+  <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+</properties>
+```
+
+
+**Code coverage report on JaCoCo**
+
+![Jacoco](img/jacoco.png)
+
+---
+
+### 💻 Install SonarQube on local
+
+I have installed SonarQube on local via machine. We can run `StartSonar.bat` to start SonarQube operation. Then, we config Sonar with Spring Boot by adding this plugin in `pom.xml`:
+
+```java
+<plugin>
+  <groupId>org.sonarsource.scanner.maven</groupId>
+  <artifactId>sonar-maven-plugin</artifactId>
+  <version>3.9.1.2184</version>
+</plugin>
+```
+
+After that, we generate token in SonarQube and push the result of analysis based on project key and generated token.
+
+```java
+mvn -X clean verify sonar:sonar -D"sonar.projectKey"="POS-System" -D"sonar.projectName"="POS System" -D"sonar.token"="yourtoken"
+```
+
+**Code coverage on SonarQube**
+
+![SonarQube](img/sqube2.png)
+
+![SonarQube](img/sqube.png)
