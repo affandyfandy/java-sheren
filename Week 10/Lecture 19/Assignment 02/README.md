@@ -48,7 +48,7 @@ In this project, I created an authentication service that will store and validat
 
 First, we need to create a Spring Boot application including some dependencies.
 
-[pom.xml]()
+[pom.xml](https://github.com/affandyfandy/java-sheren/blob/week_10/Week%2010/Lecture%2019/Assignment%2002/auth/pom.xml)
 
 **2️⃣ Configure the database**
 
