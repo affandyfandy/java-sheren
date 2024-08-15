@@ -248,15 +248,15 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/api/v1/products/**
-          filters:
-            - ApiKeyFilter
         - id: invoice
           uri: http://localhost:8082
           predicates:
             - Path=/api/v1/invoices/**
-          filters:
-            - ApiKeyFilter
+      default-filters:
+        - name: ApiKeyFilter
 ```
+For the filter, I use `default-filters` so that the filter will be applied to all routes specified.
+
 
 **3️⃣ Add WebClient configuration**
 
