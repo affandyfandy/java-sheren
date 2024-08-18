@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: product
+          uri: lb://product
+          predicates:
+            - Path=/api/v1/products/**
+        - id: invoice
+          uri: lb://invoice-service
+          predicates:
+            - Path=/api/v1/invoices/**
+      default-filters:
+        - name: ApiKeyFilter
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
