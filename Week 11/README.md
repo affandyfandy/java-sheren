@@ -18,7 +18,7 @@ Now, these are the version I’ve installed:
 
 I’ve run and looked into the code structure for the angular demo.
 
-[Angular Demo Codes]()
+[Angular Demo Codes](https://github.com/affandyfandy/java-sheren/tree/week_11/Week%2011/angular-demo-main)
 
 ![Demo](img/demo.png)
 
@@ -78,11 +78,11 @@ Now, for `No-Standalone` and `Standalone` app:
 
 **1️⃣ Create model that is `user.model.ts`**
 
-[user.model.ts]()
+[user.model.ts](https://github.com/affandyfandy/java-sheren/blob/week_11/Week%2011/standalone-app/src/app/models/user.model.ts)
 
 **2️⃣ Create service `login.service.ts`**
 
-[login.service.ts]()
+[login.service.ts](https://github.com/affandyfandy/java-sheren/blob/week_11/Week%2011/standalone-app/src/app/services/login.service.ts)
 
 **3️⃣ For each project, create login component**
 
