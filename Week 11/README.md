@@ -1,5 +1,7 @@
 ## 💡 Angular
 
+[Session 2: Product Management README](https://github.com/affandyfandy/java-sheren/blob/week_11/Week%2011/session2.md)
+
 ### ♻️ Set up environment
 
 As I’ve installed Node.js before, I only need to install Angular CLI in Command Prompt.
