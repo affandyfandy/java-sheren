@@ -1,6 +1,6 @@
 ## 💡 Angular
 
-[Session 2: Product Management README](https://github.com/affandyfandy/java-sheren/blob/week_11/Week%2011/session2.md)
+[Session 2: Product Management README](https://github.com/affandyfandy/java-sheren/blob/week_11/Week%2011/session2.MD)
 
 ### ♻️ Set up environment
 
