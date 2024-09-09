@@ -102,43 +102,43 @@ We create user module to manage all user activities.
 
 **1️⃣ Create `User`**
 
-[User.java codes]()
+[User.java codes](https://github.com/affandyfandy/java-sheren/blob/week_13/Week%2013/Assignment%2001/spring-security-app/src/main/java/com/example/spring_security_app/entity/User.java)
 
 This class serves as our entity.
 
 **2️⃣ Create `UserRepository`**
 
-[UserRepository.java codes]()
+[UserRepository.java codes](https://github.com/affandyfandy/java-sheren/blob/week_13/Week%2013/Assignment%2001/spring-security-app/src/main/java/com/example/spring_security_app/repository/UserRepository.java)
 
 This interface handles JPA database interaction and queries.
 
 **3️⃣ Create `AuthUser`**
 
-[AuthUser.java codes]()
+[AuthUser.java codes](https://github.com/affandyfandy/java-sheren/blob/week_13/Week%2013/Assignment%2001/spring-security-app/src/main/java/com/example/spring_security_app/auth/AuthUser.java)
 
 This is for managing user permissions and roles.
 
 **4️⃣ Create `AuthService`**
 
-[AuthService.java codes]()
+[AuthService.java codes](https://github.com/affandyfandy/java-sheren/blob/week_13/Week%2013/Assignment%2001/spring-security-app/src/main/java/com/example/spring_security_app/service/AuthService.java)
 
 This is for managing all logics that enable authentication, such as generating tokens.
 
 **5️⃣ Create `JpaUserDetailsService`**
 
-[JpaUserDetailsService.java codes]()
+[JpaUserDetailsService.java codes](https://github.com/affandyfandy/java-sheren/blob/week_13/Week%2013/Assignment%2001/spring-security-app/src/main/java/com/example/spring_security_app/service/JpaUserDetailsService.java)
 
 This class handles loading users from the database for login.
 
 **6️⃣ Create `AuthDTO`**
 
-[AuthDTO.java codes]()
+[AuthDTO.java codes](https://github.com/affandyfandy/java-sheren/blob/week_13/Week%2013/Assignment%2001/spring-security-app/src/main/java/com/example/spring_security_app/dto/AuthDTO.java)
 
 This class is for managing data transfers between the client and server request and response.
 
 **7️⃣ Create `AuthController`**
 
-[AuthController.java codes]()
+[AuthController.java codes](https://github.com/affandyfandy/java-sheren/blob/week_13/Week%2013/Assignment%2001/spring-security-app/src/main/java/com/example/spring_security_app/controller/AuthController.java)
 
 This class is for managing routes for authentication requests, such as login.
 
@@ -392,7 +392,8 @@ Then, let’s we provide the token generated before in the authorization.
 
 It will return the correct result.
 
-Let’s test for invoice also:
+Let’s test for invoice also.
+
 No token:
 
 ![Result](img/2un2.png)
