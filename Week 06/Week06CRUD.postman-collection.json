@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "838af961-05e0-45c5-a26f-39135302d192",
+		"name": "Week 06 Employee Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7161256"
+	},
+	"item": [
+        {
+            "name": "Employees",
+            "item": [
+                {
+                    "name": "Get paginated employees",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/employee/paginated?page=0&size=3",
+                            "host": ["localhost"],
+                            "port": "8080",
+                            "path": ["api", "v1", "employee", "paginated"],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "size",
+                                    "value": "3"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+				{
+					"name": "Get all employees",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employee",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "employee"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get employee by ID",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employee/1",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "employee", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new employee",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employee",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "employee"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"birthDate\": \"1995-01-15\",\n  \"firstName\": \"Sheren\",\n  \"lastName\": \"Yang\",\n  \"gender\": \"M\",\n  \"hireDate\": \"2018-01-01\"\n}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update employee",
+					"request": {
+						"method": "PUT",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employee/5",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "employee", "5"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"birthDate\": \"1998-01-15\",\n  \"firstName\": \"Sheren Updated\",\n  \"lastName\": \"Yang Updated\",\n  \"gender\": \"F\",\n  \"hireDate\": \"2019-01-01\"\n}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete employee",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/employee/5",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "employee", "5"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search employees",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "localhost:8080/api/v1/employee/search?firstName=&lastName=&department=",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "employee", "search"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "Get all departments",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/department",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "department"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get department by ID",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/department/d001",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "department", "d001"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new department",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/department",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "department"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"deptNo\": \"d005\",\n  \"deptName\": \"HR\"\n}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update department",
+					"request": {
+						"method": "PUT",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/department/d005",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "department", "d005"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"deptName\": \"Human Resources\"\n}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete department",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/department/d005",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "department", "d005"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Salaries",
+			"item": [
+				{
+					"name": "Get all salaries",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/salary",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "salary"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get salaries by employee ID",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/salary/1",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "salary", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get salary by employee ID and from date",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/salary/1/2018-01-01",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "salary", "1", "2018-01-01"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new salary",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/salary",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "salary"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+                            "raw": "{\n  \"id\": {\n    \"empNo\": 4,\n    \"fromDate\": \"2021-01-01\"\n  },\n  \"salary\": 60000,\n  \"toDate\": \"2022-01-01\"\n}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update salary",
+					"request": {
+						"method": "PUT",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/salary/4/2021-01-01",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "salary", "4", "2021-01-01"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+                            "raw": "{\n  \"id\": {\n    \"empNo\": 4,\n    \"fromDate\": \"2021-01-01\"\n  },\n  \"salary\": 75000,\n  \"toDate\": \"2023-01-01\"\n}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete salary",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/salary/4/2021-01-01",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "salary", "4", "2021-01-01"]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Titles",
+			"item": [
+				{
+					"name": "Get all titles",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/title",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "title"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get titles by employee ID",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/title/1",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "title", "1"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new title",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/title",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "title"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+                            "raw": "{\n  \"id\": {\n    \"empNo\": 2,\n    \"title\": \"Accounting Staff\",\n    \"fromDate\": \"2018-01-01\"\n  },\n  \"toDate\": \"9999-01-01\"\n}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update title",
+					"request": {
+						"method": "PUT",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/title/2/Accounting%20Staff/2018-01-01",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "title", "2", "Accounting%20Staff", "2018-01-01"]
+						},
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+                            "raw": "{\n  \"id\": {\n    \"empNo\": 2,\n    \"title\": \"Accounting Staff\",\n    \"fromDate\": \"2018-01-01\"\n  },\n  \"toDate\": \"2020-01-01\"\n}"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete title",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "http://localhost:8080/api/v1/title/2/Accounting%20Staff/2018-01-01",
+							"host": ["localhost"],
+							"port": "8080",
+							"path": ["api", "v1", "title", "2", "Accounting%20Staff", "2018-01-01"]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
